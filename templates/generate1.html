@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Music</title>
+    <link rel="stylesheet" href="../static/generate_style.css">
+    <!--<link rel="script" href="../static/generate.js">-->
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.22.1/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.4.0"></script>
+
+    <style>
+        .ul-navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(1, 25, 31);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  
+}
+
+
+
+.a-navbar {
+  display: block;
+  color: white;
+  font-size: 21px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+
+.a-navbar:hover:not(.active) {
+  background-color: #005752;
+  color: white;
+}
+
+    </style>
+</head>
+<body>
+    
+    <ul class="ul-navbar">
+    <li class="li-navbar" style="float:left"><a href="home"><img src="../static/logo3.PNG" alt="" style="height: 50px;width: 140px;"></a></li>
+    
+    <li class="li-navbar" style="float:right"><a class="a-navbar" href="{{ url_for('logout') }}">Logout</a></li>
+    
+    <li class="li-navbar" style="float: right;"><a class="a-navbar" href="about">About Us</a></li>
+    
+  	</ul>
+    
+	<br><br>
+
+    <form action="{{ url_for('generate') }}" method="post">
+        <br><br>
+        <textarea name="" id="seed" cols="110" rows="1" placeholder="Enter some swaras from the keyboard below ..." style="font-size: 20px; margin-left: 50px;"></textarea>
+        <textarea name="hidden_seed" id="hidden_seed" cols="110" rows="1" placeholder="Enter some swaras from the keyboard below ..." style="font-size: 20px; margin-left: 50px; visibility: hidden;"></textarea>
+       <div class="animate-charcter">
+        <div style="display: flex;" >
+            <p style="color: white; margin-left: 260px;font-size: 25px;">Mandra Saptak</p>
+            <p style="color: white; margin-left: 100px;font-size: 25px;">Madhya Saptak </p>
+            <p style="color: white; margin-left: 130px;font-size: 25px;">Taar Saptak </p>
+
+        </div>
+          </div> 
+          
+        <ul class="ul-keyboard">
+            
+            <span onclick="appendToSeed60()" id="सा़"><li class="white e"><h4>सा़</h4></li></span>
+            <!--<li class="white e" ><span style="top 100px; vertical-align:text-bottom;">सा़</span></li>-->
+            <span onclick="appendToSeed61()" id="ऱे"><li class="black ds"style="color: white;"><h4>ऱे</h4></li></span>
+            <span onclick="appendToSeed62()" id="ऱे"><li class="white d"><h4>ऱे</h4></li></span>
+            <span onclick="appendToSeed63()" id="ग़"><li class="black cs" style="color: white;"><h4>ग़</h4></li></span>
+            <span onclick="appendToSeed64()" id="ग़"><li class="white c"><h4>ग़</h4></li></span>
+            <span onclick="appendToSeed65()" id="म़"><li class="white b"><h4>म़</h4></li></span>
+            <span onclick="appendToSeed66()" id="म़"><li class="black as" style="color: white;"><h4>म़</h4></li></span>
+            <span onclick="appendToSeed67()" id="प़"><li class="white a"><h4>प़</h4></li></span>
+            <span onclick="appendToSeed68()" id="ध़"><li class="black gs" style="color: white;"><h4>ध़</h4></li></span>
+            <span onclick="appendToSeed69()" id="ध़"><li class="white g"><h4>ध़</h4></li></span>
+            <span onclick="appendToSeed70()" id="नि़"><li class="black fs" style="color: white;"><h4>नि़</h4></li></span>
+            <span onclick="appendToSeed71()" id="नि़"><li class="white f"><h4>नि़</h4></li></span>
+            
+            <span onclick="appendToSeed72()" id="सा"><li class="white e"><h4>सा</h4></li></span>
+            <span onclick="appendToSeed73()" id="रे"><li class="black ds" style="color: white;"><h4>रे</h4></li></span>
+            <span onclick="appendToSeed74()" id="रे"><li class="white d"><h4>रे</h4></li></span>
+            <span onclick="appendToSeed75()" id="ग"><li class="black cs" style="color: white;"><h4>ग</h4></li></span>
+            <span onclick="appendToSeed76()" id="ग"><li class="white c"><h4>ग</h4></li></span>
+            <span onclick="appendToSeed77()" id="म"><li class="white b"><h4>म</h4></li></span>
+            <span onclick="appendToSeed78()" id="म"><li class="black as" style="color: white;"><h4>म</h4></li></span>
+            <span onclick="appendToSeed79()" id="प"><li class="white a"><h4>प</h4></li></span>
+            <span onclick="appendToSeed80()" id="ध"><li class="black gs" style="color: white;"><h4>ध</h4></li></span>
+            <span onclick="appendToSeed81()" id="ध"><li class="white g"><h4>ध</h4></li></span>
+            <span onclick="appendToSeed82()" id="नि"><li class="black fs" style="color: white;"><h4>नि</h4></li></span>
+            <span onclick="appendToSeed83()" id="नि"><li class="white f"><h4>नि</h4></li></span>
+            
+            <span onclick="appendToSeed84()" id="सां"><li class="white e"><h4>सां</h4></li></span>
+            <span onclick="appendToSeed85()" id="रें"><li class="black ds" style="color: white;"><h4>रें</h4></li></span>
+            <span onclick="appendToSeed86()" id="रें"><li class="white d"><h4>रें</h4></li></span>
+            <span onclick="appendToSeed87()" id="गं"><li class="black cs" style="color: white;"><h4>गं</h4></li></span>
+            <span onclick="appendToSeed88()" id="गं"><li class="white c"><h4>गं</h4></li></span>
+            <span onclick="appendToSeed89()" id="मं"><li class="white b"><h4>मं</h4></li></span>
+            <span onclick="appendToSeed90()" id="मं"><li class="black as" style="color: white;"><h4>मं</h4></li></span>
+            <span onclick="appendToSeed91()" id="पं"><li class="white a"><h4>पं</h4></li></span>
+            <span onclick="appendToSeed92()" id="धं"><li class="black gs" style="color: white;"><h4>धं</h4></li></span>
+            <span onclick="appendToSeed93()" id="धं"><li class="white g"><h4>धं</h4></li></span>
+            <span onclick="appendToSeed94()" id="निं"><li class="black fs" style="color: white;"><h4>निं</h4></li></span>
+            <span onclick="appendToSeed95()" id="निं"><li class="white f"><h4><h4>निं</h4></h4></li></span>
+          </ul>
+          
+        <br>
+        <div class="wooden_button_grp">
+        <span id="rest" class="wooden-button" onclick="appendRestToSeed()">Rest</span>
+        <br>
+        <span id="duration" class="wooden-button" onclick="appendDurationToSeed()">Duration</span>
+        <br>
+        <button type="submit" class="wooden-button" oninput="validityCheck()"  >Generate Music</button>
+        </div>
+        <br>
+
+        
+        <audio controls style="margin-left: 40%;">
+            <source src="../static/audio/sitar-melody-10-trimmed.wav" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <!--<midi-player style="margin-left: 40%; width: 300px; height: 50px;" src="{{music_path}}" sound-font>
+        </midi-player>-->
+        
+        <!-- The following needs to be inserted somewhere on the page for the player(s) to work. -->
+       
+
+        <p style="color: white; font-size: 22px; text-align: center;">
+        Note : <br>
+        1) To backspace you can directly use backspace key of your keyboard <br> <br>
+        2) To add Rest in Song click on Rest Button. (In music theory, a rest <br> refers to an interval of time that a player is not sounding a note on <br> their instrument.) <br><br>
+        3) To add Duration in Song click on Duration Button. (Duration is the <br> length of time each note is played for) <br><br>
+    </p>
+
+    </form>
+    
+
+    <script>
+        /*function validityCheck(){
+            let seed = document.getElementById("seed").value;
+            const pattern = /^[60-95r_ ]*$*$/
+            if (seed.match(pattern))
+            {
+                // pass to the function else show error
+            }
+        }                        
+
+        */
+
+        function appendRestToSeed() {
+            let og_seed = document.getElementById("seed").value;
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "r ";
+            document.getElementById("seed").value = og_seed + "r  ";
+        }
+
+        function appendDurationToSeed() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + "_  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "_ ";
+        }
+
+        function appendToSeed60() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("सा़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "60 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note60.m4a");
+            audio.play();
+        }
+
+        function appendToSeed61() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ऱे").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "61 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note61.m4a");
+            audio.play();
+        }
+
+        function appendToSeed62() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ऱे").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "62 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note62.m4a");
+            audio.play();
+        }
+
+        function appendToSeed63() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ग़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "63 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note63.m4a");
+            audio.play();
+        }
+
+        function appendToSeed64() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ग़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "64 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note64.m4a");
+            audio.play();
+        }
+
+        function appendToSeed65() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("म़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "65 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note65.m4a");
+            audio.play();
+        }
+
+        function appendToSeed66() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("म़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "66 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note66.m4a");
+            audio.play();
+        }
+
+        function appendToSeed67() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("प़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "67 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note67.m4a");
+            audio.play();
+        }
+
+        function appendToSeed68() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ध़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "68 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note68.m4a");
+            audio.play();
+        }
+
+        function appendToSeed69() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ध़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "69 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note69.m4a");
+            audio.play();
+        }
+
+    
+        function appendToSeed70() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("नि़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "70 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note70.m4a");
+            audio.play();
+        }
+
+        function appendToSeed71() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("नि़").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "71 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note71.m4a");
+            audio.play();
+        }
+           
+        function appendToSeed72() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("सा").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "72 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note72.m4a");
+            audio.play();
+        }
+
+        function appendToSeed73() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("रे").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "73 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note73.m4a");
+            audio.play();
+        }
+
+        function appendToSeed74() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("रे").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "74 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note74.m4a");
+            audio.play();
+        }
+
+        function appendToSeed75() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ग").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "75 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note75.m4a");
+            audio.play();
+        }
+
+        function appendToSeed76() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ग").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "76 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note76.m4a");
+            audio.play();
+        }
+
+        function appendToSeed77() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("म").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "77 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note77.m4a");
+            audio.play();
+        }
+
+        function appendToSeed78() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("म").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "78 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note78.m4a");
+            audio.play();
+        }
+
+        function appendToSeed79() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("प").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "79 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note79.m4a");
+            audio.play();
+        }
+
+        function appendToSeed80() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ध").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "80 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note80.m4a");
+            audio.play();
+        }
+
+        function appendToSeed81() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("ध").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "81 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note81.m4a");
+            audio.play();
+        }
+
+        function appendToSeed82() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("नि").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "82 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note82.m4a");
+            audio.play();
+        }
+
+        function appendToSeed83() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("नि").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "83 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note83.m4a");
+            audio.play();
+        }
+ 
+
+        function appendToSeed84() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("सां").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "84 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note84.m4a");
+            audio.play();
+        }
+        function appendToSeed85() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("रें").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "85 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note85.m4a");
+            audio.play();
+        }
+        function appendToSeed86() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("रें").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "86 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note86.m4a");
+            audio.play();
+        }
+        function appendToSeed87() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("गं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "87 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note87.m4a");
+            audio.play();
+        }
+        function appendToSeed88() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("गं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "88 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note88.m4a");
+            audio.play();
+        }
+        function appendToSeed89() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("मं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "89 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note89.m4a");
+            audio.play();
+        }
+        function appendToSeed90() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("मं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "90 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note90.m4a");
+            audio.play();
+        }
+        function appendToSeed91() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("पं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "91 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note91.m4a");
+            audio.play();
+        }
+        function appendToSeed92() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("धं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "92 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note92.m4a");
+            audio.play();
+        }
+        function appendToSeed93() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("धं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "93 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note93.m4a");
+            audio.play();
+        }
+        function appendToSeed94() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("निं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "94 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note94.m4a");
+            audio.play();
+        }
+        function appendToSeed95() {
+            let og_seed = document.getElementById("seed").value;
+            document.getElementById("seed").value = og_seed + document.getElementById("निं").id + "  ";
+            let hidden_og_seed = document.getElementById("hidden_seed").value;
+            document.getElementById("hidden_seed").value = hidden_og_seed + "95 ";
+            // To play audio
+            var audio = new Audio("../static/keyboard_sound/Note95.m4a");
+            audio.play();
+        }
+        </script>
+</body>
+
+</html>

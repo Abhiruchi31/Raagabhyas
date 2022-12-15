@@ -1,0 +1,187 @@
+* {
+  box-sizing:border-box
+}
+
+body {
+  margin:0;
+  background:#222;
+  background-image: url('bg18.webp');
+    
+    background-repeat:repeat-x;
+    background-size: cover;
+  /*background-image: linear-gradient(to bottom right,#C70039, #FFC300);*/
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.ul-keyboard {
+  height:18.875em;
+  width:62em;
+  margin:5em auto;
+  padding:3em 0 0 3em;
+  position:relative;
+  border:1px solid #160801;
+  border-radius:1em;
+  background:linear-gradient(to bottom right,rgba(0,0,0,0.3),rgba(0,0,0,0)),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
+  box-shadow:0 0 50px rgba(0,0,0,0.5) inset,0 1px rgba(212,152,125,0.2) inset,0 5px 15px rgba(0,0,0,0.5)
+}
+
+li {
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:relative;
+  float:left
+}
+
+.white > h4{
+bottom: 0;
+position: absolute;
+left: 1em;
+}
+
+ul .white {
+  height:16em;
+  width:3em;
+  z-index:1;
+  text-align: center;
+  
+  border-left:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  border-radius:0 0 5px 5px;
+  box-shadow:-1px 0 0 rgba(255,255,255,0.8) inset,0 0 5px #ccc inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#eee 0%,#fff 100%)
+}
+
+ul .white:active {
+  border-top:1px solid #777;
+  border-left:1px solid #999;
+  border-bottom:1px solid #999;
+  
+  box-shadow:2px 0 3px rgba(0,0,0,0.1) inset,-5px 5px 20px rgba(0,0,0,0.2) inset,0 0 3px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom,#fff 0%,#e9e9e9 100%)
+}
+
+.black {
+  height:8em;
+  width:1.5em;
+  margin:0 0 0 -1em;
+  z-index:2;
+  text-align: center;
+  border:1px solid #000;
+  border-radius:0 0 3px 3px;
+  box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -5px 2px 3px rgba(0,0,0,0.6) inset,0 2px 4px rgba(0,0,0,0.5);
+  background:linear-gradient(45deg,#222 0%,#555 100%)
+}
+
+.black:active {
+  box-shadow:-1px -1px 2px rgba(255,255,255,0.2) inset,0 -2px 2px 3px rgba(0,0,0,0.6) inset,0 1px 2px rgba(0,0,0,0.5);
+  background:linear-gradient(to right,#444 0%,#222 100%)
+}
+
+.a,.g,.f,.d,.c {
+  margin:0 0 0 -1em
+}
+
+ul li:first-child {
+  border-radius:5px 0 5px 5px
+}
+
+ul li:last-child {
+  border-radius:0 5px 5px 5px
+}
+
+.wooden-button{
+  height:2em;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+  width:12em;
+  padding: 25px;
+  margin: auto;
+  text-align: center;
+  position:relative;
+  border:1px solid #160801;
+  border-radius:10px;
+  background:linear-gradient(to bottom right,rgba(0,0,0,0.3),rgba(0,0,0,0)),url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
+  box-shadow:0 0 50px rgba(0,0,0,0.5) inset,0 1px rgba(212,152,125,0.2) inset,0 5px 15px rgba(0,0,0,0.5);
+  color: white;
+}
+
+.wooden_button_grp{
+  display: flex;
+  
+}
+
+.animate-charcter
+  {
+     text-transform: uppercase;
+    background-image: linear-gradient(
+      -225deg,
+      #f7f5c5 0%,
+      #B38728 29%,
+      #FCF6BA 67%,
+      #AA771C 100%
+      
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 35px;
+    font-weight: bolder;
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 40% center;
+    }
+  }
+
+.ul-navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(1, 25, 31);
+  
+  top: 0;
+  width: 100%;
+  position: absolute;
+}
+
+
+
+.a-navbar {
+  display: block;
+  color: white;
+  font-size: 21px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background: -webkit-linear-gradient(#FBF5B7,#BF953F, #B38728);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  
+}
+
+.a-navbar:hover:not(.active) {
+  background-color: #005752;
+  color: white;
+}
+
+
+  
+.logout-btn{
+  color: white;
+  background: rgb(0, 35, 44);
+  padding: 10px;
+  border:#BF953F 2px solid ;
+  border-radius: 30px;
+  font-weight: bold; 
+}

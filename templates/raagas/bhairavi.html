@@ -1,0 +1,236 @@
+<html>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../../static/style.css">
+
+    <style>
+      .body-container {
+      display: flex;
+      justify-content:space-around;
+    }
+    </style>
+
+<body>
+
+  <ul class="ul-navbar">
+    <li class="li-navbar" style="float:left"><a  href="home"><img src="../../static/logo3.PNG" alt="" style="height: 50px;width: 140px;"></a></li>
+    
+    <li class="li-navbar" style="float:right"><a class="a-navbar" href="{{ url_for('logout') }}">Logout</a></li>
+    <li class="li-navbar" style="float: right;"><a class="a-navbar" href="about">About Us</a></li>
+    <li class="li-navbar" style="float:right"><a class="a-navbar" href="generate" >Generate Melody</a></li>
+    
+  </ul>
+<br><br>
+<h1>Raag Bhairavi</h1>
+<div class="body-container" >
+    <div class="left">
+        <p style="width: 700px">Any one who claims to know or appreciate Hindustani music cannot be unaware of the 
+            queen of melodies i.e. Raag Bhairavi. The soft (Komal) notes and their smooth rendering
+             with pleasing touches - Khatke, Jhatke and Murkiyan simply mesmerizes the audience. 
+             A pleasant sobering atmosphere full of love and piety is created and one feels so close to the Supreme.
+            Raag Bhairavi is an early morning Raag, but it is also used as a concluding piece in the concerts
+             at any time. Illustrative combinations include
+            r g r g S r S ; g m P ; P d P ; P d n d m ; d P g m ; P m g m r r S ; ,d S ; S g m P ; P d P ; m M m ; g r S ; S g r m g ; S g P m g S r S ; ,n r ,n ,d ,n ,d ,P ,P ,d ,n ,d S;
+        </p>
+
+        <table style="text-align:center; font-size: 20px;" >
+            <tbody>
+            
+            <tr ><td width="25%">Swaras</td>
+            <td>Rishabh, Gandhar, Dhaivat, Nishad Komal. Madhyam Shuddha.</td></tr>
+            
+            <tr><td width="25%">Jati</td>
+            <td>Sampurna - Sampurna</td></tr>
+            
+            <tr><td width="25%">Thaat</td>
+            <td>Bhairavi</td></tr>
+            
+            <tr><td width="25%">Vadi/Samvadi</td>
+            <td>Madhyam/Shadj</td></tr>
+            
+            <tr"><td width="25%">Time</td>
+            <td>1st Prahar of the day (Sunrise), Sarv Kalik</td></tr>
+            
+            <tr><td width="25%">Vishranti Sthan</td>
+            <td><strong>S; m; P; - S'; P; m;</strong></td></tr>
+            
+            <tr><td width="25%">Mukhya-Ang</td>
+            <td><strong>g S r S ; g m P ; d m d n S' ; r' S' d P g m r S;</strong></td></tr>
+            
+            <tr><td width="25%">Aaroh-Avroh</td>
+            <td><strong>S r g m P d n S' - S' n d P m g r S;</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="right" style="width: 370px;">
+        <h3>Sargam</h3>
+        <audio controls >
+            <source src="../../static/audio/Sargam --Ni Sa Ga Ma Pa Dha  Pa --Trital -PVR.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        <br>
+
+        <h3>Raag Bhairavi Arohana and Avarohana</h3>
+        <audio controls>
+        
+            <source src="../../static/audio/BhairaviAroh.mp3" type="audio/mpeg">
+            
+        Your browser does not support the audio element.
+        </audio>
+        <video width="350" height="200" controls>
+            <source src="../../static/video/Raag Bhairav.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    </div>
+    
+</div>
+
+
+<div class="fun-facts">
+  <h3 class="animate-charcter">Free Lessons!!</h3> <br>
+  <p>Raag Bhairavi is often referred to as the Queen of Morning Raagas.It produces a rich ,
+    devotional atmosphere especially suitable for the genres of Bhajan and the light classical form of Thumri.
+    Listed below are some basic lessons which every student must checkout ...</p>
+  <button type="button" class="collapsible">Lesson 1 (Reading)</button>
+  <div class="content">
+    <p>
+      Raag or Raaga: <br>
+      The melody with an overall mood or environment producing a lasting impression while entertaining or recreating the audience. A combination of different musical notes or Swaras in a particular sequence of ascending and descending makes a Raag.
+      <br><br>
+      Rasas or Bhavas: <br>
+      There are 9 Rasas or Bhavas described in the Hindustani Classical Music/Dance forms: Bhakti (Devotional), Karuna, Veer, Veebhatsa, Vichitra, Hasya (Humour), Virah, Vairagya and Krodh (Anger).
+      <br><br>
+      Sargam: <br>
+      The composition which uses the names of the notes instead of words.
+      <br><br>
+      Aaroh-Avroh: <br>
+      Aaroh of a Raag is the sequence of the notes in ascending order between Madhya Shadja (S) and Tar Shadja (S'). Avroh of a Raag is the sequence of notes in descending order between Tar Shadja (S') and Madhya Shadja (S).
+      <br><br>
+      Alankar: <br>
+      Alankars literally meaning jewels, are combination of the notes of a Raag. Alankars follow a particular pattern of combination of notes like an ornament and are very effective while rendering Taans.
+      <br><br>
+      Alap: <br>
+      It is the development of a Raag through improvisation while observing all the laws of the Raag.
+      <br><br>
+      Antara: <br>
+      It is the second stanza of a composition, usually including and emphasizing the upper notes of the Raag.
+      <br><br>
+      Chota Khayal: <br>
+      A composition in medium to fast tempo that usually follows the bada khayal.<br><br>
+      Bada Khayal: <br>
+      The first composition of a khayal performance in slow tempo.
+      <br><br>
+      Bandish: <br>
+      A composition in Hindustani classical music, usually with two parts corresponding to the sthayi and antara.
+      <br><br>
+    </p>
+  </div>
+  <br> <br> 
+  <button type="button" class="collapsible">Lesson 2 ( Reading + Practice )</button>
+  <div class="content">
+    <p>
+      How to Sing the Sargam ? <br>
+      The composition which uses the names of the notes instead of words.  <br><br>
+      <audio controls >
+        <source src="../../static/audio/Sargam --Ni Sa Ga Ma Pa Dha  Pa --Trital -PVR.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+    </p>
+  </div>
+  <br> <br> 
+  <button type="button" class="collapsible">Lesson 3 (Practice)</button>
+  <div class="content">
+    <p> In this lesson you will learn a bandish based on Raag Bhairavi , "Kaisi ye Bhalai re kanhai..." <br><br>
+      <audio controls >
+        <source src="../../static/audio/bhairavi30.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio><br><br>
+      To learn more about the notations check out the Youtube Link : <a style="color: white;" href="https://www.youtube.com/watch?v=8oY1PGXg3R8">Click Here</a></p>
+  </div>
+  
+  </div>
+
+
+
+
+<div class="fun-facts">
+    <h3 class="animate-charcter"> Raag Bhairavi in Bollywood !!</h3> <br>
+    <p>Raag Bhairavi is not only limited to Indian Classical music but can be also seen
+        in Bollywood Movies! Yes, you read it right in Bollywood Movies as well.
+        Here are some songs...
+        
+    </p>
+    <div class="fun-facts-songs">
+  <div class="song1">  
+  <button type="button" class="collapsible2">Song : Bol Radha Bol Sangam Hoga Ke Nahin</button>
+  <div class="content2">
+    <p>
+        Film - Sangam <br>
+        Year - 1964 <br>
+        Tal - Kaherava <br>
+        Singer(s) - Mukesh, Vyjayantimala <br>
+      Youtube Link : <a style="color: white;" href="https://www.youtube.com/watch?v=N5iJo67xyKc">Click Here</a></p>
+  </div>
+  </div>
+   
+  <div class="song1"> 
+  <button type="button" class="collapsible2">Song : Chahe Koi Mujhe Jangli Kahe</button>
+  <div class="content2">
+    <p>
+        Film - Junglee <br>
+        Year - 1961 <br>
+        Tal - Kaherava <br>
+        Singer(s) - Mohd. Rafi <br>
+      Youtube Link : <a style="color: white;" href="https://www.youtube.com/watch?v=uSJbyyN1jmU">Click Here</a></p>
+  </div>
+  </div>
+
+  <div class="song1"> 
+  <button type="button" class="collapsible2">Song : Pyaar Hua Ikraar Hua</button>
+  <div class="content2">
+    <p>
+        Film - Shri 420 <br>
+        Year - 1955 <br>
+        Rag - Bhairavi <br>
+        Tal - Kaherava <br>
+        Singer(s) - Manna Dey, Lata Mangeshkar <br>
+      Youtube Link : <a style="color: white;" href="https://www.youtube.com/watch?v=oXLzfldeDcM">Click Here</a></p>
+</div>
+</div>
+</div>
+</div>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    
+    var coll = document.getElementsByClassName("collapsible2");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+</body>
+
+</html>
